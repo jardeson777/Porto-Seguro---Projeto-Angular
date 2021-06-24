@@ -1,0 +1,198 @@
+#hospitaisDestaque {
+    margin: 0 20px;
+    #top{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h1 {
+            margin-top: 40px;
+            font-size: 1.8rem;
+        }
+        a{
+            height: 30px;
+            width: 30px;
+            margin-top: 40px;
+            border: none;
+            border-radius: 12px;
+            background-color: #f7b53d ;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 1000;
+            text-align: center;
+            line-height: 25px;
+            cursor: pointer;
+        }
+    }
+
+    #line {
+        background-color: #f7b53d;
+        height: 2px;
+        width: 10rem;
+        margin-top: 10px;
+    }
+
+    #intro {
+        color: #4b4b4b;
+        font: normal normal normal 15px/20px Open Sans;
+        margin: 10px 0;
+    }
+
+    #content {
+        border-radius: 0 0 12px 12px;
+
+        article {
+            background-color: white;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0px 3px 6px #00000029;
+            font-size: 0.8rem;
+            max-height: auto;
+
+            img.hospitalImg {
+                border-radius: 12px 12px 0 0;
+                width: 100%;
+            }
+
+            .info {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                cursor: pointer;
+
+                h3 {
+                    color: #e8bb15;
+                    text-align: center;
+                    margin-top: 10px;
+                }
+
+                img {
+                    width: 1rem;
+                }
+            }
+
+            .info2 {
+                margin: 0 20px;
+                display: none;
+                hr {
+                    display: block;
+                    height: 1px;
+                    border: 0;
+                    border-top: 1px solid #dbd9d9;
+                    margin: 1em 0;
+                    padding: 0;
+                }
+                div.contact {
+                    p {
+                        display: flex;
+                        padding: 10px;
+                        img {
+                            width: 1.2rem;
+                            margin-right: 5px;
+                        }
+                        b {
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+
+            .display {
+                display: block;
+            }
+        }
+
+        @media screen and (min-width: 650px) {
+            // display: grid;
+            // grid-template-columns: 1fr 1fr 1fr;
+            // grid-template-rows: auto;
+            // grid-template-areas:  "1 2 3";
+            // grid-gap: 10px;
+            white-space: nowrap;
+            overflow: auto;
+            &:nth-child(1){
+                grid-area: 1;
+            }
+            &:nth-child(2){
+                grid-area: 2;
+            }
+            &:nth-child(3){
+                grid-area: 3;
+            }
+
+            article {
+                width: 30vw;
+                margin: 10px;
+                max-width: 350px;
+                display: inline-block;
+
+                .display{
+                    display: none;
+                }
+            }
+        }
+    }
+
+    #info3{
+        display: none;
+        margin-bottom: 20px;
+    }
+
+    @media screen and (min-width: 650px) {
+        width: 80%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:  "a a a"
+                              "b b b"
+                              "c c c"
+                              "d d d"
+                              "e e e";
+
+        #top{
+            grid-area: a;
+        }
+
+        #line{
+            grid-area: b;
+        }
+        #intro{
+            grid-area: c;
+        }
+        #content{
+            grid-area: d;
+        }
+
+        #info3{
+            background-color: white;
+            box-shadow: 0px 3px 6px #00000029;
+            padding: 20px;
+            border-radius: 12px;
+            display: flex;
+            width: 100%;
+            grid-area: e;
+
+            .lineV{
+                height: 100%;
+                width: 1px;
+                margin: 10px;
+                background-color: #dbd9d9;
+            }
+
+            p {
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                img {
+                    width: 1.8rem;
+                    height: 1.8rem;
+                    margin-right: 5px;
+                }
+                b {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}

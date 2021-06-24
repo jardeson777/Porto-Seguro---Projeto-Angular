@@ -1,0 +1,101 @@
+<header id="header">
+    <nav id="menu">
+        <div id="top">
+            <div>
+                <img
+                    src="../../assets/images/logoNorte.png"
+                    alt="Logo Norte a Sul"
+                    id="logoNorte"
+                />
+                <img
+                    src="../../assets/images/Logo.png"
+                    alt="Logo Porto Seguro"
+                    id="logoPorto"
+                />
+            </div>
+
+            <input type="checkbox" id="buttonMenu" />
+            <label for="buttonMenu" (click)= "openMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+
+
+        <div id="menuOpen" [ngStyle] = "{'left' : left}">
+            <ul>
+                <li>
+                    <a href="#">SOBRE</a>
+                </li>
+
+                <li>
+                    <a href="#">HOSPITAIS</a>
+                </li>
+
+                <li>
+                    <a href="#">BENEFÍCIOS</a>
+                </li>
+
+                <li>
+                    <a href="#">SERVIÇOS ESPECIAIS</a>
+                </li>
+
+                <li>
+                    <a href="#">CONTATO</a>
+                </li>
+            </ul>
+
+            <div id="contato">
+                <span id="textFale"> FALE CONOSCO AGORA MESMO: </span>
+                <span id="textNum"> 4020-6440 </span>
+
+                <a id="mensagem" href="">
+                    <img
+                        src="../../assets/images/iconeWhats.png"
+                        alt="Mensagem via whatsapp"
+                    />
+                    <span>
+                        CLIQUE AQUI PARA<br />
+                        ENVIAR UMA MENSAGEM
+                    </span>
+                </a>
+
+                <a id="ligacao" href="">
+                    <img src="../../assets/images/iconeTel.png" alt="Ligação" />
+                    <span> CLIQUE AQUI PARA LIGAR </span>
+                </a>
+            </div>
+            <span id="textF"> Horário de atendimento de 8h às 17h </span>
+        </div>
+    </nav>
+
+    <div id="textBanner">
+        <div id="textHeader">
+            <span>
+                Conforto e qualidade <br />para levar bem-estar <br />com alto
+                padrão de <br />atendimento a seus funcionários.
+            </span>
+
+            <div id="line"></div>
+        </div>
+
+        <div id="precoHeader">
+            A partir de <span id="rs">R$</span> <span id="dezena">255</span
+            ><span id="centavos">,65*</span>
+
+            <button>VER MAIS</button>
+        </div>
+
+        <div id="aviso">
+            <span
+                >*Valor referente ao plano Ouro Copar Q (ANS: 481.277/18-8) de 3
+                à 9 vidas, com 20%</span
+            >
+            <span>
+                de copart. com faixa etária entre 0 e 18 anos. Sem IOF.</span
+            >
+            <span> Promoção válida até 30 de abril de 2021.</span>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,178 @@
+@keyframes clickHeight{
+    from{max-height: 0;}
+    to{max-height: 4000px;}
+}
+
+@keyframes clickOpacity{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+section{
+    margin: 0 20px;
+
+    h1{
+        margin-top: 40px;
+        font-size: 1.8rem;
+    }
+
+    #line{
+        background-color: #F7B53D;
+        height: 2px;
+        width: 10rem;
+        margin-top: 10px;
+    }
+
+    #intro{
+        color: #4B4B4B;
+        font: normal normal normal 15px/20px Open Sans;
+        margin: 10px 0;
+    }
+
+    #planGold{
+        padding: 20px;
+        background-color: #D6A430;
+        border-radius: 12px;
+        color: white;
+        box-shadow: 0px 3px 6px #0000008a;
+    	display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas: "h1 . h2"
+                            "m1 m1 m1"
+                            "m2 m2 m2"
+                            "m3 m3 m3"
+                            "f f f";
+
+        #plan{
+            color: #FFD984;
+            width: 120px;
+        }
+        #price{
+            grid-area: h1;
+        }
+
+        #price1{
+            font-weight: 600;
+            margin-top: 15px;
+            width: 120px;
+        }
+
+        #price2{
+            font-weight: 700;
+            width: 120px;
+            span{
+                font-size: 2rem;
+            }
+        }
+
+        #notice{
+            width: 100%;
+            min-width: 100px;
+            max-width: 150px;
+            grid-area: h2;
+            p{
+                font-size: .6rem;
+            }
+
+            img{
+                max-width: 5rem;
+                align-self: center;
+                margin-top: 10px;
+            }
+        }
+
+        #content1, #content2, #content3{
+            display: none;
+            animation: clickHeight 10s normal, clickOpacity 2s normal;
+            p{
+                padding: 10px 0;
+                border-bottom: 1px solid #9a6d0c69;
+                span{
+                    display: block;
+                    font-size: .6rem;
+                    opacity: .7;
+                }
+            }
+        }
+        #content1{
+            grid-area: m1;
+        }
+        #content2{
+            grid-area: m2;
+        }
+        #content3{
+            grid-area: m3;
+        }
+
+
+        #buttons{
+            margin-top: 25px;
+            grid-area: f;
+            button{
+                width: 100%;
+                color: white;
+                border: none;
+                box-shadow: 0px 3px 6px #00000029;
+                border-radius: 15px;
+                height: 30px;
+                font-size: .8rem;
+                text-transform: uppercase;
+                font-weight: 600;
+
+                &:first-child{
+                    background-color: #F7B53D;
+                    margin-bottom: 10px;
+                }
+
+                &:last-child{
+                    background-color: #9A6D0C;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 650px){
+        width: 80%;
+        margin: 0 auto;
+        #planGold{
+            display: grid;
+            grid-gap: 20px;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: auto auto;
+            grid-template-areas: "h1 h2 h3 h3 h3 h3"
+                                "m1 m1 m2 m2 m3 m3";
+
+            #price{
+                grid-area: h1;
+            }
+            #notice{
+                grid-area: h2;
+            }
+            #buttons{
+                grid-area: h3;
+            }
+            #content1{
+                grid-area: m1;
+                p{
+                    border: none;
+                }
+            }
+            #content2{
+                grid-area: m2;
+                p{
+                    border: none;
+                }
+            }
+            #content3{
+                grid-area: m3;
+                p{
+                    border: none;
+                }
+            }
+        }
+    }
+
+}
+
+

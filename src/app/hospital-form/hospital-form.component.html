@@ -1,0 +1,106 @@
+<div id="form">
+    <div id="top">
+        <h1>Cadastrar novo hospital</h1>
+    </div>
+
+    <div id="line"></div>
+
+    <p>Preencha os dados a seguir para cadastrar um novo hospital.</p>
+
+    <div class="success" [ngClass] = '{successClose: showSuccess}'>
+        <div class="exit" (click)="close()"><img src="../../assets/images/close.png" alt=""></div>
+        <div class="s"></div>
+        Hospital cadastrado com sucesso!
+    </div>
+
+    <form action="" [formGroup]="form">
+        <div>
+            <label for="name">Nome do hospital:</label>
+            <input
+                type="text"
+                name="name"
+                autocomplete="off"
+                formControlName="name"
+                placeholder="Digite o nome do Hospital"
+                [ngClass]="{invalid: invalid && hasError('name')}"
+            />
+        </div>
+
+        <br />
+
+        <div>
+            <label for="createdAt">Data de criação:</label>
+            <input
+                name="createdAt"
+                type="date"
+                autocomplete="off"
+                formControlName="createdAt"
+                placeholder="Digite uma data"
+                [ngClass]="{invalid: invalid && hasError('createdAt')}"
+            />
+        </div>
+
+        <br />
+
+        <div>
+            <label for="image">Imagem(url):</label>
+            <input
+                name="image"
+                type="url"
+                autocomplete="off"
+                formControlName="image"
+                placeholder="Digite uma url"
+                [ngClass]="{invalid: invalid && hasError('image')}"
+            />
+        </div>
+
+        <br />
+
+        <div>
+            <label for="phone">Telefone:</label>
+            <input
+                name="phone"
+                type="tel"
+                autocomplete="off"
+                formControlName="phone"
+                placeholder="Digite um nº telefone"
+                [ngClass]="{invalid: invalid && hasError('phone')}"
+            />
+        </div>
+
+        <br />
+
+        <div>
+            <label for="address">Endereço:</label>
+            <input
+                name="address"
+                type="text"
+                autocomplete="off"
+                formControlName="address"
+                placeholder="Digite um endereço"
+                [ngClass]="{invalid: invalid && hasError('address')}"
+            />
+        </div>
+
+        <br />
+
+        <div>
+            <label for="detail">Detalhes:</label>
+            <textarea
+                name="detail"
+                id=""
+                cols="30"
+                rows="5"
+                formControlName="detail"
+                placeholder="Digite alguns detalhes sobre o hospital"
+                [ngClass]="{invalid: invalid && hasError('detail')}"
+            ></textarea>
+        </div>
+
+        <div class="buttons">
+            <button type="submit" (click)="onClick()">Cadastrar</button>
+            <a href="" class="close">Cancelar</a>
+        </div>
+
+    </form>
+</div>

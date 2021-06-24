@@ -1,0 +1,80 @@
+<div id="hospitaisDestaque">
+    <div id="top">
+        <h1>Hospitais em destaque</h1>
+        <a routerLink="/cadastro">+</a>
+    </div>
+
+    <div id="line"></div>
+
+    <p id="intro">
+        Contando com os melhores hospitais do Rio de Janeiro, o plano Ouro
+        dispõe para sua empresa as redes mais referenciadas com diversos
+        benefícios para que você tenha um atendimento totalmente personalizado.
+    </p>
+
+    <div id="content">
+        <article *ngFor="let hospital of date">
+            <img class="hospitalImg" src="{{ hospital.image }}" alt="" />
+
+            <a class="info" (click)="openInfo2(hospital.id)">
+                <h3>{{ hospital.name }}</h3>
+                <img src="../../assets/images/seta-para-baixo.png" alt="" />
+                <br />
+            </a>
+
+            <div
+                class="info2 id{{ hospital.id }}"
+                [ngClass]="{ display: verifica[hospital.id-1]}"
+            >
+                <span class="detail">
+                    {{ hospital.detail }}
+                </span>
+                <hr />
+
+                <div class="contact">
+                    <p>
+                        <img src="../../assets/images/endereço.png" alt="" />
+                        <b>Endereço:</b>
+                        <span>{{ hospital.address }}</span>
+                    </p>
+
+                    <p>
+                        <img
+                            src="../../assets/images/iconeTelYellow.png"
+                            alt=""
+                        />
+                        <b>Telefone:</b>
+                        <span>{{ hospital.phone }}</span>
+                    </p>
+                </div>
+            </div>
+        </article>
+        <br />
+    </div>
+
+    <div id="info3" *ngIf="hospital != null">
+        <div style="width: 50%;">
+            {{hospital.detail}}
+        </div>
+
+        <div class="lineV"></div>
+
+        <div>
+            <p>
+                <img src="../../assets/images/endereço.png" alt="" />
+                <b>Endereço:</b>
+                <span>{{ hospital.address }}</span>
+            </p>
+
+            <p>
+                <img
+                    src="../../assets/images/iconeTelYellow.png"
+                    alt=""
+                />
+                <b>Telefone:</b>
+                <span>{{ hospital.phone }}</span>
+            </p>
+        </div>
+
+    </div>
+</div>
