@@ -36,11 +36,8 @@ export class HospitalFormComponent implements OnInit {
     }
 
     onClick() {
-        this.service.remove("4");
-
         if (this.form.valid) {
             this.invalid = false;
-            this.form.reset();
 
             this.service.postDate(this.form.value).subscribe(
                 success =>
@@ -51,6 +48,7 @@ export class HospitalFormComponent implements OnInit {
         } else {
             this.invalid = true;
         }
+        this.form.reset();
     }
 
     close(){

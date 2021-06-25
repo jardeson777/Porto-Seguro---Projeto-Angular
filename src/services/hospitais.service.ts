@@ -24,7 +24,5 @@ export class HospitaisService {
     }
 
 }
-function take(arg0: number): import("rxjs").OperatorFunction<Object, unknown> {
-    throw new Error('Function not implemented.');
-}
+
 
