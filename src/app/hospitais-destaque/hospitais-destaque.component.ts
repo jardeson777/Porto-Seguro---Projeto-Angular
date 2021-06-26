@@ -63,11 +63,12 @@ export class HospitaisDestaqueComponent implements OnInit {
             this.deleteBool = false;
             document.body.style.overflow = 'auto';
         } else {
-            this.hospitais.remove(this.idRemove).subscribe(
+            this.hospitais.removeDate(this.idRemove).subscribe(
                 success => {
                     this.deleteBool = false;
                     this.closeSuccess = true;
                     document.body.style.overflow = 'hidden';
+                    this.getter();
                 },
                 error => console.error(error)
             );
