@@ -13,19 +13,23 @@
     </p>
 
     <div id="content">
+
         <article *ngFor="let hospital of date">
             <div class="alignClose">
                 <span>&nbsp;</span>
-                <button class="close"><img src="../../assets/images/close.png" alt="" title="Remover"></button>
+
+                <button class="close"><img src="../../assets/images/close.png" alt="" title="Remover" (click)="confirmDelete(hospital.id)"></button>
             </div>
 
             <img class="hospitalImg" src="{{ hospital.image }}" alt="" />
 
             <a class="info" (click)="openInfo2(hospital.id)">
+
                 <div style="display: flex; flex-direction: column; align-items: center;">
                     <h3>{{ hospital.name }}</h3>
                     <img src="../../assets/images/seta-para-baixo.png" alt=""/>
                 </div>
+
                 <br />
             </a>
 
@@ -85,3 +89,16 @@
 
     </div>
 </div>
+
+<div id="deleteHospital" [ngClass]="{deleteClose: deleteBool}">
+    <div id="img"></div>
+
+    Tem certeza que deseja<br>remover esse hospital?
+
+    <div style="display: flex; width: 100%; justify-content: center;">
+        <button id="yes" (click)="deleteFunc(true)">SIM</button>
+        <button id="no" (click)="deleteFunc(false)">NÃO</button>
+    </div>
+</div>
+
+
