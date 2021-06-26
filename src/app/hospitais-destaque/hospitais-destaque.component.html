@@ -23,7 +23,7 @@
 
             <img class="hospitalImg" src="{{ hospital.image }}" alt="" />
 
-            <a class="info" (click)="openInfo2(hospital.id)">
+            <a class="info" (click)="openInfo(hospital)">
 
                 <div style="display: flex; flex-direction: column; align-items: center;">
                     <h3>{{ hospital.name }}</h3>
@@ -34,8 +34,8 @@
             </a>
 
             <div
-                class="info2 id{{ hospital.id }}"
-                [ngClass]="{ display: verifica[hospital.id-1]}"
+                class="info2"
+                [ngClass]="{ display: verifica[indiceHospital]}"
             >
                 <span class="detail">
                     {{ hospital.detail }}

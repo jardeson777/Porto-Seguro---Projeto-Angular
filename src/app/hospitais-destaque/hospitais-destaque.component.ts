@@ -11,10 +11,11 @@ export class HospitaisDestaqueComponent implements OnInit {
     erro: any;
     display: string = '';
     verifica: any = [];
-    verifica2: any;
+    // verifica2: any = false;
     hospital: any;
     deleteBool: boolean = false;
     idRemove: string = '';
+    indiceHospital : number = 0;
 
     constructor(private hospitais: HospitaisService) {
         this.getter();
@@ -34,23 +35,16 @@ export class HospitaisDestaqueComponent implements OnInit {
         );
     }
 
-    openInfo3(id:number){
-        if(this.verifica2){
+    openInfo(hospital: any) {
+        this.indiceHospital = this.date.indexOf(hospital);
+
+        if (this.verifica[this.indiceHospital]) { //Informações está aberta
+            this.verifica[this.indiceHospital] = false;
             this.hospital = null;
-            this.verifica2 = false;
-        } else {
-            this.hospital = this.date[id-1];
-            this.verifica2 = true;
-        }
-    }
 
-    openInfo2(id: number) {
-        this.openInfo3(id);
-
-        if (this.verifica[id-1]) {
-            this.verifica[id-1] = false;
-        } else {
-            this.verifica[id-1] = true;
+        } else { //Informações está fechada
+            this.verifica[this.indiceHospital] = true;
+            this.hospital = hospital;
         }
     }
 
