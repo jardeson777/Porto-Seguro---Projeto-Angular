@@ -1,7 +1,10 @@
 <div id="hospitaisDestaque">
     <div id="top">
         <h1>Hospitais em destaque</h1>
-        <a routerLink="/cadastro">+</a>
+
+        <a routerLink="/cadastro">
+            <img src="../../assets/images/plus.png" alt="" srcset="">
+        </a>
     </div>
 
     <div id="line"></div>
@@ -99,6 +102,18 @@
         <button id="yes" (click)="deleteFunc(true)">SIM</button>
         <button id="no" (click)="deleteFunc(false)">NÃO</button>
     </div>
+</div>
+
+<div id="deleteSuccess" *ngIf="closeSuccess">
+    <div class="success">
+        <img src="../../assets/images/success.png" alt="">
+        Hospital removido com sucesso.
+    </div>
+
+    <div class="close" title="Fechar" (click)="close()" >
+        <img src="../../assets/images/close.png" alt="">
+    </div>
+
 </div>
 
 

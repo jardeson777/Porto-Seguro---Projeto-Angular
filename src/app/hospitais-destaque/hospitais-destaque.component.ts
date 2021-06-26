@@ -11,11 +11,11 @@ export class HospitaisDestaqueComponent implements OnInit {
     erro: any;
     display: string = '';
     verifica: any = [];
-    // verifica2: any = false;
     hospital: any;
     deleteBool: boolean = false;
     idRemove: string = '';
     indiceHospital : number = 0;
+    closeSuccess : boolean = false;
 
     constructor(private hospitais: HospitaisService) {
         this.getter();
@@ -38,11 +38,11 @@ export class HospitaisDestaqueComponent implements OnInit {
     openInfo(hospital: any) {
         this.indiceHospital = this.date.indexOf(hospital);
 
-        if (this.verifica[this.indiceHospital]) { //Informações está aberta
+        if (this.verifica[this.indiceHospital]) { //Informações fecha
             this.verifica[this.indiceHospital] = false;
             this.hospital = null;
 
-        } else { //Informações está fechada
+        } else { //Informaçoes abre
             this.verifica[this.indiceHospital] = true;
             this.hospital = hospital;
         }
@@ -64,10 +64,21 @@ export class HospitaisDestaqueComponent implements OnInit {
             document.body.style.overflow = 'auto';
         } else {
             this.hospitais.remove(this.idRemove).subscribe(
-                success => console.log('Removido'),
+                success => {
+                    this.deleteBool = false;
+                    this.closeSuccess = true;
+                    document.body.style.overflow = 'hidden';
+                },
                 error => console.error(error)
             );
             document.body.style.overflow = 'auto';
+        }
+    }
+
+    close(){
+        if(this.closeSuccess){
+            document.body.style.overflow = 'auto';
+            this.closeSuccess = false;
         }
     }
 }
