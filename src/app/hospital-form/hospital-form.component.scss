@@ -20,9 +20,11 @@
 
     .success{
 
-        width: 50vw;
+        width: 80vw;
+        max-width: 500px;
         height: 60vh;
         background-color: white;
+        background-position-y: center;
         border-radius: 12px;
         border: green 1px solid;
         box-shadow: 0px 3px 6px #00000029;
@@ -30,15 +32,16 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        position: absolute;
+        position: fixed;
         top: -100vh;
-        left: 25vw;
+        left: 50%;
+        transform: translateX(-50%);
         z-index: 100;
         transition: top .7s;
 
         div.s{
             background-image: url("../../assets/images/success.png");
-            background-size: 150px;
+            background-size: 100%;
             background-repeat: no-repeat;
             opacity: .6;
             width: 50%;
