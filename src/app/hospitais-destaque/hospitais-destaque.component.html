@@ -14,11 +14,18 @@
 
     <div id="content">
         <article *ngFor="let hospital of date">
+            <div class="alignClose">
+                <span>&nbsp;</span>
+                <button class="close"><img src="../../assets/images/close.png" alt="" title="Remover"></button>
+            </div>
+
             <img class="hospitalImg" src="{{ hospital.image }}" alt="" />
 
             <a class="info" (click)="openInfo2(hospital.id)">
-                <h3>{{ hospital.name }}</h3>
-                <img src="../../assets/images/seta-para-baixo.png" alt="" />
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <h3>{{ hospital.name }}</h3>
+                    <img src="../../assets/images/seta-para-baixo.png" alt=""/>
+                </div>
                 <br />
             </a>
 

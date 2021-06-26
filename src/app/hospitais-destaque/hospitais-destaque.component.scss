@@ -54,11 +54,28 @@
                 width: 100%;
             }
 
-            .info {
+            div.alignClose{
                 display: flex;
-                flex-direction: column;
-                align-items: center;
+                justify-content: space-between;
+                button.close{
+                    margin: 5px 3px 0 0;
+                    white-space: break-spaces !important;
+                    border: none;
+                    background-color: transparent;
+                    cursor: pointer;
+                    img{
+                        width: 20px;
+                    }
+                }
+            }
+
+            .info {
+                // display: flex;
+                // flex-direction: column;
+                // align-items: center;
                 cursor: pointer;
+
+
 
                 h3 {
                     color: #e8bb15;
