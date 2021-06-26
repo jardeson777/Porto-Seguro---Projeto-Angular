@@ -43,7 +43,7 @@ export class HospitalFormComponent implements OnInit {
                 success =>
                     this.showSuccess = true
                 ,
-                error => console.error(error)
+                error => this.hasError(error)
             );
         } else {
             this.invalid = true;

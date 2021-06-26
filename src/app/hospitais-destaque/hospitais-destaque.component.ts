@@ -13,12 +13,15 @@ export class HospitaisDestaqueComponent implements OnInit {
     verifica: any = [];
     verifica2: any;
     hospital: any;
+    deleteBool: boolean = false;
+    idRemove: string = '';
 
     constructor(private hospitais: HospitaisService) {
         this.getter();
     }
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+    }
 
     getter() {
         this.hospitais.getDate().subscribe(
@@ -41,7 +44,6 @@ export class HospitaisDestaqueComponent implements OnInit {
         }
     }
 
-
     openInfo2(id: number) {
         this.openInfo3(id);
 
@@ -49,6 +51,29 @@ export class HospitaisDestaqueComponent implements OnInit {
             this.verifica[id-1] = false;
         } else {
             this.verifica[id-1] = true;
+        }
+    }
+
+    confirmDelete(id:string){
+        if(this.deleteBool){
+            this.deleteBool = false;
+        } else {
+            this.idRemove = id;
+            this.deleteBool = true;
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    deleteFunc(check : boolean){
+        if(!check){
+            this.deleteBool = false;
+            document.body.style.overflow = 'auto';
+        } else {
+            this.hospitais.remove(this.idRemove).subscribe(
+                success => console.log('Removido'),
+                error => console.error(error)
+            );
+            document.body.style.overflow = 'auto';
         }
     }
 }
