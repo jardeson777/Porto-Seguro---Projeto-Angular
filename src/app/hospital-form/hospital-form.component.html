@@ -50,7 +50,8 @@
                 autocomplete="off"
                 formControlName="image"
                 placeholder="Digite uma url"
-                [ngClass]="{invalid: invalid && hasError('image')}"
+                [ngClass]="{invalid: errorImg}"
+                #img
             />
         </div>
 
@@ -98,9 +99,10 @@
         </div>
 
         <div class="buttons">
-            <button type="submit" (click)="onClick()">Cadastrar</button>
+            <button type="submit" (click)="onClick()" >Cadastrar</button>
             <a href="" class="close">Cancelar</a>
         </div>
 
     </form>
 </div>
+

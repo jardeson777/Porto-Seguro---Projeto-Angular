@@ -18,8 +18,7 @@ export class HospitaisService {
         return this.http.post(this.serveUrl, hospital);
     }
 
-    public remove(id: string){
+    public removeDate(id: string) : Observable<any>{
         return this.http.delete(`${this.serveUrl}/${id}`);
     }
-
 }
